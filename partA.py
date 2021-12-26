@@ -14,6 +14,7 @@ dataset = pd.read_csv('heart.csv')
 # refactoring data fields for better processing
 temp_replace = {'M': 1, 'F': 0}
 dataset.Sex = [temp_replace[temp_replace_loop] for temp_replace_loop in dataset.Sex]
+# or dataset['Sex'].replace({'M':1,'F':0}, inplace = True)
 
 temp_replace = {'TA': 0, 'ASY': 1, 'ATA': 2, 'NAP': 3}
 dataset.ChestPainType = [temp_replace[temp_replace_loop] for temp_replace_loop in dataset.ChestPainType]
